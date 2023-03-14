@@ -1,0 +1,29 @@
+{
+  "name": "j-hash-node",
+  "version": "0.0.0",
+  "description": "File hashing algorithm using SHA256 and Merkle trees",
+  "keywords": [
+    "sha256",
+    "hmac",
+    "sha"
+  ],
+  "bugs": {
+    "url": "https://github.com/bartjoyce/j-hash-node/issues"
+  },
+  "homepage": "https://github.com/bartjoyce/j-hash-node",
+  "license": "MIT",
+  "author": "Bartholomew Joyce <work@bartholomewjoyce.com>",
+  "main": "./index.js",
+  "repository": "git://github.com/bartjoyce/j-hash-node",
+  "scripts": {
+    "install": "node-gyp rebuild"
+  },
+  "dependencies": {
+    "bindings": "^1.5.0",
+    "nan": "^2.17.0"
+  },
+  "engines": {
+    "node": ">= 0.12"
+  },
+  "gypfile": true
+}
