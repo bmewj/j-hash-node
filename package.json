@@ -1,6 +1,6 @@
 {
   "name": "j-hash-node",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "File hashing algorithm using SHA256 and Merkle trees",
   "keywords": [
     "sha256",
