@@ -204,7 +204,7 @@ class JProofVerifyCtx : public Nan::ObjectWrap {
             return Nan::ThrowTypeError("constructor() expects one argument of type string.");
         }
 
-        Nan::Utf8String utf8_string = Nan::Utf8String(info[0]);
+        v8::String::Utf8Value utf8_string = v8::String::Utf8Value(info.GetIsolate(), info[0]);
         if (utf8_string.length() <= 0) {
             return Nan::ThrowTypeError("constructor() expects one argument of type string.");
         }
