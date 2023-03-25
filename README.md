@@ -136,7 +136,7 @@ function verifyRange(byteRangeData, proof, fileHash) {
     if (hash && hash === fileHash) {
         return true;                        // Byte range & proof produce correct hash
     } else {
-        return true;                        // Failure :(
+        return false;                       // Failure :(
     }
 }
 
@@ -151,7 +151,7 @@ function verifyRange(byteStream, proof, fileHash, callback) {
         callback(false); // proof parse error
     }
 
-    stream.on('data', chunk => {
+    byteStream.on('data', chunk => {
         jproof.update(chunk);
         if (jproof.hasError()) {
             stream.close();
@@ -159,8 +159,8 @@ function verifyRange(byteStream, proof, fileHash, callback) {
         }
     });
 
-    stream.on('end', () => {
-        callback(jproof.final());
+    byteStream.on('end', () => {
+        callback(jproof.final() === fileHash);
     });
 }
 ```
